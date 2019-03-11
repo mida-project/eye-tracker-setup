@@ -59,7 +59,7 @@ from gazers import *
 from getters import *
 
 def apply_licenses(eyetracker):
-  license_file_path = "../licenses/se_internal_license_for_system_tests"
+  license_file_path = os.path.join(joinPath, 'licenses', 'se_internal_license_for_system_tests')
   import tobii_research as tr
   print("Applying license from {0}.".format(license_file_path))
   with open(license_file_path, "rb") as f:
