@@ -56,6 +56,7 @@ sys.path.insert(0, methodsAbsPath)
 # Importing available methods
 from finders import *
 from gazers import *
+from getters import *
 
 def main():
   eyetracker = find_eyetrackers_meta()
@@ -64,6 +65,7 @@ def main():
   # time.sleep(5)
   # new_eyetracker.unsubscribe_from(tr.EYETRACKER_GAZE_DATA, gaze_data_callback)
   gaze_output_frequencies(eyetracker)
+  get_and_set_display_area(eyetracker)
 
 if __name__ == '__main__':
   main()
