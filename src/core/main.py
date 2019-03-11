@@ -58,8 +58,13 @@ from finders import *
 from callbacks import *
 
 def main():
-  new_eyetracker = find_eyetrackers_meta()
-  new_eyetracker.subscribe_to(tr.EYETRACKER_GAZE_DATA, gaze_data_callback, as_dictionary=True)
+  found_eyetrackers = tr.find_all_eyetrackers()
+  available_eyetracker = found_eyetrackers[0]
+  print("Address: " + available_eyetracker.address)
+  print("Model: " + available_eyetracker.model)
+  print("Name (It's OK if this is empty): " + available_eyetracker.device_name)
+  print("Serial number: " + available_eyetracker.serial_number)
+  available_eyetracker.subscribe_to(tr.EYETRACKER_GAZE_DATA, gaze_data_callback, as_dictionary=True)
 
 if __name__ == '__main__':
   main()
