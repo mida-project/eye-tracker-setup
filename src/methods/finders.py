@@ -2,10 +2,7 @@
 #coding=utf-8
 
 """
-main.py: When creating a Python module, it is common to make
-         the module execute some functionality (usually contained
-         in a main function) when run as the entry point of
-         the program.
+.py:
 """
 
 __author__      = "Francisco Maria Calisto"
@@ -41,25 +38,10 @@ pathAbsPath = os.path.abspath(joinPath)
 # the Python path (wants absolute paths).
 sys.path.append(pathAbsPath)
 
-# Appending variables path.
-varsPath = os.path.join(joinPath, 'variables')
-varsAbsPath = os.path.abspath(varsPath)
-sys.path.append(varsAbsPath)
-sys.path.insert(0, varsAbsPath)
-
-# Appending methods path.
-methodsPath = os.path.join(joinPath, 'methods')
-methodsAbsPath = os.path.abspath(methodsPath)
-sys.path.append(methodsAbsPath)
-sys.path.insert(0, methodsAbsPath)
-
-# Importing available methods
-from finders import *
-
-def main():
-  find_eyetrackers_meta()
-
-if __name__ == '__main__':
-  main()
-
-# ==================== END File ==================== #
+def find_eyetrackers_meta():
+  found_eyetrackers = tr.find_all_eyetrackers()
+  my_eyetracker = found_eyetrackers[0]
+  print("Address: " + my_eyetracker.address)
+  print("Model: " + my_eyetracker.model)
+  print("Name (It's OK if this is empty): " + my_eyetracker.device_name)
+  print("Serial number: " + my_eyetracker.serial_number)
