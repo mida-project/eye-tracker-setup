@@ -85,4 +85,4 @@ def find_eyetrackers_meta():
     else:
       print("The eye tracker can not get/set the HMD lens configuration.")
 
-  return found_eyetrackers
+    return available_eyetracker
