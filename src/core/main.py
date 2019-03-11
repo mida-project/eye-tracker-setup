@@ -60,7 +60,7 @@ from callbacks import *
 def main():
   new_eyetracker = find_eyetrackers_meta()
   new_eyetracker.subscribe_to(tr.EYETRACKER_GAZE_DATA, gaze_data_callback, as_dictionary=True)
-  time.sleep(100)
+  time.sleep(5)
   new_eyetracker.unsubscribe_from(tr.EYETRACKER_GAZE_DATA, gaze_data_callback)
 
 if __name__ == '__main__':
