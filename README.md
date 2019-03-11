@@ -46,8 +46,18 @@ The installation guidelines are as follows. Please, be sure that you follow it c
 
 2.1. Run the following command to install the [library](http://docs.python-requests.org/en/master/user/install/#install) using [pip](https://pypi.org/project/pip/):
 
+#### On Linux or OS X
+
 ```
-pip install requests
+pip install -U pip setuptools
+pip install tobii-research
+```
+
+#### On Windows
+
+```
+python -m pip install -U pip setuptools
+pip install tobii-research
 ```
 
 2.2. Follow the next step;
