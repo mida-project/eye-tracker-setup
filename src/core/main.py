@@ -35,6 +35,13 @@ import time
 basePath = os.path.dirname(__file__)
 
 # The path to the repository "src" folder.
+joinRepoPath = os.path.join(basePath, '..', '..')
+pathRepoAbsPath = os.path.abspath(joinRepoPath)
+# Add the directory containing the module to
+# the Python path (wants absolute paths).
+sys.path.append(pathRepoAbsPath)
+
+# The path to the repository "src" folder.
 joinPath = os.path.join(basePath, '..')
 pathAbsPath = os.path.abspath(joinPath)
 # Add the directory containing the module to
@@ -59,7 +66,8 @@ from gazers import *
 from getters import *
 
 def apply_licenses(eyetracker):
-  license_file_path = os.path.join(joinPath, 'licenses', 'se_internal_license_for_system_tests')
+  license_file_path = os.path.join(joinRepoPath, 'licenses', 'se_internal_license_for_system_tests')
+  print(license_file_path)
   import tobii_research as tr
   print("Applying license from {0}.".format(license_file_path))
   with open(license_file_path, "rb") as f:
