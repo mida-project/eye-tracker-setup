@@ -55,9 +55,11 @@ sys.path.insert(0, methodsAbsPath)
 
 # Importing available methods
 from finders import *
+from callbacks import *
 
 def main():
-  find_eyetrackers_meta()
+  new_eyetracker = find_eyetrackers_meta()
+  new_eyetracker.subscribe_to(tr.EYETRACKER_GAZE_DATA, gaze_data_callback, as_dictionary=True)
 
 if __name__ == '__main__':
   main()

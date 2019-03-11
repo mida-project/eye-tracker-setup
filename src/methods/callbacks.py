@@ -38,11 +38,8 @@ pathAbsPath = os.path.abspath(joinPath)
 # the Python path (wants absolute paths).
 sys.path.append(pathAbsPath)
 
-def find_eyetrackers_meta():
-  found_eyetrackers = tr.find_all_eyetrackers()
-  available_eyetracker = found_eyetrackers[0]
-  print("Address: " + available_eyetracker.address)
-  print("Model: " + available_eyetracker.model)
-  print("Name (It's OK if this is empty): " + available_eyetracker.device_name)
-  print("Serial number: " + available_eyetracker.serial_number)
-  return available_eyetracker
+def gaze_data_callback(gaze_data):
+  # Print gaze points of left and right eye
+  print("Left eye: ({gaze_left_eye}) \t Right eye: ({gaze_right_eye})".format(
+    gaze_left_eye=gaze_data['left_gaze_point_on_display_area'],
+    gaze_right_eye=gaze_data['right_gaze_point_on_display_area']))
