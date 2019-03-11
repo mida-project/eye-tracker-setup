@@ -38,8 +38,29 @@ pathAbsPath = os.path.abspath(joinPath)
 # the Python path (wants absolute paths).
 sys.path.append(pathAbsPath)
 
+global_gaze_data = None
+
 def gaze_data_callback(gaze_data):
-  # Print gaze points of left and right eye
-  print("Left eye: ({gaze_left_eye}) \t Right eye: ({gaze_right_eye})".format(
-    gaze_left_eye=gaze_data['left_gaze_point_on_display_area'],
-    gaze_right_eye=gaze_data['right_gaze_point_on_display_area']))
+  global global_gaze_data
+  global_gaze_data = gaze_data
+
+# def gaze_data_callback(gaze_data):
+#   # Print gaze points of left and right eye
+#   print("Left eye: ({gaze_left_eye}) \t Right eye: ({gaze_right_eye})".format(
+#     gaze_left_eye=gaze_data['left_gaze_point_on_display_area'],
+#     gaze_right_eye=gaze_data['right_gaze_point_on_display_area']))
+
+def gaze_data(eyetracker):
+  global global_gaze_data
+
+  print("Subscribing to gaze data for eye tracker with serial number {0}.".format(eyetracker.serial_number))
+  eyetracker.subscribe_to(tr.EYETRACKER_GAZE_DATA, gaze_data_callback, as_dictionary=True)
+
+  # Wait while some gaze data is collected.
+  time.sleep(5)
+
+  eyetracker.unsubscribe_from(tr.EYETRACKER_GAZE_DATA, gaze_data_callback)
+  print("Unsubscribed from gaze data.")
+
+  print("Last received gaze package:")
+  print(global_gaze_data)
