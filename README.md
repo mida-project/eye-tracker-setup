@@ -18,6 +18,10 @@ List of dependencies for this project:
 
 - [Tobii Research](https://pypi.org/project/tobii-research/) (>= [v1.6](https://pypi.org/project/tobii-research/1.6.1/))
 
+### Analytical Use
+
+Tobii’s consumer eye trackers are primarily intended for personal interaction use and not for analytical purposes. Any application that stores or transfers eye tracking data must have a special license from Tobii ([Read more](https://analyticaluse.tobii.com/)). Please, apply for a license [here](https://analyticaluse.tobii.com/license-application-form/).
+
 ## Instructions
 
 The instructions are as follows. We assume that you already have knowledge over [Git](https://git-scm.com/) and [GitHub](https://github.com/). If not, please follow this [support](https://guides.github.com/activities/hello-world/) information. Any need for support, just open a [New issue](https://github.com/mida-project/eye-tracker-setup/issues/new).
