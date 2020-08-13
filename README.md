@@ -102,7 +102,7 @@ To find out how to apply the [Upgrade Key](https://www.tobiipro.com/siteassets/t
 
 ### Acknowledgements
 
-The work is also based and higly contributed from the [`tobii_pro_wrapper`](https://github.com/oguayasa/tobii_pro_wrapper). The [`tobii_pro_wrapper`](https://github.com/oguayasa/tobii_pro_wrapper) repository was developed by [Olivia Guayasamin](http://collectivebehaviour.com/) ([oguayasa](https://github.com/oguayasa)) that we would like to thank. That repository shows pretty much everything we need to connect to a Tobii Eye-Tracker, calibrate the eyetracker, get gaze, eye, and time synchronization data from the eyetracker device, and convert the Tobii coordinate systems units.
+The work is also based and highly contributed from the [`tobii_pro_wrapper`](https://github.com/oguayasa/tobii_pro_wrapper). The [`tobii_pro_wrapper`](https://github.com/oguayasa/tobii_pro_wrapper) repository was developed by [Olivia Guayasamin](http://collectivebehaviour.com/) ([oguayasa](https://github.com/oguayasa)) that we would like to thank. That repository shows pretty much everything we need to connect to a Tobii Eye-Tracker, calibrate the eyetracker, get gaze, eye, and time synchronization data from the eyetracker device, and convert the Tobii coordinate systems units.
 
 ### Authors
 
